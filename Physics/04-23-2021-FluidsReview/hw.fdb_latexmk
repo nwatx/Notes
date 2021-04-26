@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1619241677 "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.tex" "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.pdf" "hw" 1619241681
+["pdflatex"] 1619403273 "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.tex" "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.pdf" "hw" 1619403277
   "C:/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -93,17 +93,17 @@
   "C:/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/wangg/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1610573770 9277381 6d36133b0960fabede6a5c376e6d6be5 ""
   "C:/Users/wangg/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1610572291 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
-  "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.aux" 1619241681 1850 3509ccc25468e0df00e860ba617d50bf ""
-  "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.tex" 1619241668 1730 f144b067c6e1781ba627b06557941565 ""
-  "hw.aux" 1619241681 1850 3509ccc25468e0df00e860ba617d50bf "pdflatex"
-  "hw.out" 1619241681 516 5b9a4860b0fd1dbcdc32778eb0d6b274 "pdflatex"
-  "hw.tex" 1619241668 1730 f144b067c6e1781ba627b06557941565 ""
-  "hw.toc" 1619241681 713 7907dbc1f758fc2feb6f1e01ecc77b3e "pdflatex"
+  "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.aux" 1619403277 1850 3509ccc25468e0df00e860ba617d50bf ""
+  "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.tex" 1619403270 1747 ab22bb7e7989e6d3e7a6be83d15dfad6 ""
+  "hw.aux" 1619403277 1850 3509ccc25468e0df00e860ba617d50bf "pdflatex"
+  "hw.out" 1619403277 516 5b9a4860b0fd1dbcdc32778eb0d6b274 "pdflatex"
+  "hw.tex" 1619403270 1747 ab22bb7e7989e6d3e7a6be83d15dfad6 ""
+  "hw.toc" 1619403277 713 7907dbc1f758fc2feb6f1e01ecc77b3e "pdflatex"
   (generated)
   "hw.toc"
-  "hw.out"
-  "hw.pdf"
   "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.pdf"
+  "hw.out"
   "c:/Users/wangg/OneDrive/Desktop/Notes/Physics/04-23-2021-FluidsReview/hw.log"
-  "hw.aux"
   "hw.log"
+  "hw.pdf"
+  "hw.aux"
