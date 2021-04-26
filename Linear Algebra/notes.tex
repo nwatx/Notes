@@ -4,6 +4,7 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{parskip}
 % \setlist[itemize]{align=parleft,left=0pt..1em}
 % \setlist[enumerate]{align=parleft,left=0pt..1em}
 \renewcommand{\labelitemii}{$\circ$}
@@ -18,11 +19,12 @@
 \maketitle
 \tableofcontents
 
+
+\section{Single Value Decomposition}
+
 \begin{markdown}
 
-# Single Value Decomposition
-
-Since the columns of $V$ are orthonormal...
+A reading on Medium can be found [here](https://blog.statsbot.co/singular-value-decomposition-tutorial-52c695315254). Now we will get into the SVD itself. Since the columns of $V$ are orthonormal...
 
 $$VV^T=I$$
 
@@ -30,9 +32,9 @@ $$A = U\sum V^T$$
 
 Where do we get the columns of $V$ and $U$ from?
 
-$$A^T = (U\sum U^T)^T$$
+$$A^T = (U\sum U^T)^T=V\sum^2 V^T$$
 
-$=V\sum^2 V^T$, diagnolization of $A^TA$, so the $\sigma=\sqrt{\text{eigenvalues of}A^TA}$
+diagnolization of $A^TA$, so the $\sigma=\sqrt{\text{eigenvalues of}A^TA}$
 
 \end{markdown}
 
@@ -41,31 +43,55 @@ After we find the $v$'s there is a shortcut for the $u$'s.
 $$Av_i=\sigma_i\vec{u}_i$$
 
 Example 1: Find the SVD for $A = \begin{bmatrix}
-    3&0\\4&5
+	3 & 0 \\4&5
 \end{bmatrix}$
 
 \begin{itemize}
-\item We can find $\sigma = \sqrt{5}, 3\sqrt{5}$ and eigenvalues of $5, 45$
-\item The full worked example can be found in your notes.
+	\item We can find $\sigma = \sqrt{5}, 3\sqrt{5}$ and eigenvalues of $5, 45$
+	\item The full worked example can be found in your notes.
 \end{itemize}
 
 Example 2: Using the left SVD to find SVD of:
 
 $$
-\begin{align*}
-    A &= 
-    \begin{bmatrix}
-        0&1&0&0\\0&0&2&0\\0&0&0&3
-    \end{bmatrix} \\
-    A^TA &=
-    \begin{bmatrix}
-    0&0&0&0\\0&1&0&0\\0&0&4&0\\0&0&0&9
-    \end{bmatrix} \\
-\end{align*}
+\begin{aligned}
+	A    & =
+	\begin{bmatrix}
+		0 & 1 & 0 & 0 \\0&0&2&0\\0&0&0&3
+	\end{bmatrix} \\
+	A^TA & =
+	\begin{bmatrix}
+		0 & 0 & 0 & 0 \\0&1&0&0\\0&0&4&0\\0&0&0&9
+	\end{bmatrix} \\
+\end{aligned}
 $$
 
 \begin{itemize}
-    \item Since this matrix is diagonal, the eigenvalues are $0, 1, 4, 9$. Then $\sigma=0,1,2,3$ respectively.
+	\item Since this matrix is diagonal, the eigenvalues are $0, 1, 4, 9$. Then $\sigma=0,1,2,3$ respectively.
 \end{itemize}
+
+Example 3 (from MIT OCW):
+
+Find the singular value decomposition of $$A=\begin{bmatrix}
+		4  & 4 \\
+		-3 & 3
+\end{bmatrix}$$
+
+Step 1: We calculate
+
+$$
+A^TA=\begin{bmatrix}
+	25 & 7 \\ 
+	7 & 25
+\end{bmatrix}
+$$
+
+Step 2: Find the eigenvectors of this matrix to get the vectors $v_i$, and the eigenvalues for $\sigma_i$.
+
+For our example, the two orthogonal eigenvectors are $(1, 1)$ and $(1, -1)$. Our orthonormal basis, then is
+
+$$
+v_1=\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right), v_2=\left(\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)
+$$
 
 \end{document}
