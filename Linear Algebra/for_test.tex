@@ -1,0 +1,166 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[smartEllipses,hybrid]{markdown}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+% \setlist[itemize]{align=parleft,left=0pt..1em}
+% \setlist[enumerate]{align=parleft,left=0pt..1em}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\circ$}
+
+\title{Linear Algebra - Neater}
+\author{Neo Wang}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Computer Graphics}
+
+Points are stored like
+
+$$
+T = \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0 \\
+	x_0 & y_0 & z_0 & 1
+\end{bmatrix}
+$$
+
+Rotations in 2D then, are given by the matrix
+
+$$
+T = \begin{bmatrix}
+	\cos \theta & \sin \theta & 0 \\
+	-\sin \theta & \cos \theta & 0 \\
+	0 & 0 & 1
+\end{bmatrix}
+$$
+
+\section{Fractions in Modular Arithmetic}
+
+\begin{itemize}
+	\item The modular inverse of a number $a$ is denoted by the number $a^{-1}$ such that $a \cdot a^{-1} \equiv 1 \mod{n}$.
+	\item Such inverses do not exist if $a$ and $n$ are not coprime.
+	\item If we have a fraction like $\frac{2}{3}\equiv x\mod{5}$, then we must decompose as: $2\cdot 3^{-1}\equiv x \mod{5}$. Since $3^{-1}\equiv 2 \mod 5$, $2 \cdot 2 \equiv 4 \mod{5}$.
+\end{itemize}
+
+\section{Incidence Matrices}
+
+\subsection{Construction}
+
+Given the graph $A$ with $5$ nodes, $1 \rightarrow 2$, $1 \rightarrow 3$, $2 \rightarrow 5$, $3 \rightarrow 5$, $5 \rightarrow 4$, $1 \rightarrow 5$. We can construct the graph. Notice that there is one $1$ and $-1$ in each row; this represents an edge.
+
+$$
+A = \begin{bmatrix}
+	-1 & 1 & 0 & 0 & 0 \\
+	-1 & 0 & 1 & 0 & 0 \\
+	0 & -1 & 0 & 0 & 1 \\
+	0 & 0 & -1 & 0 & 1 \\
+	0 & 0 & 0 & 1 & -1 \\
+	-1 & 0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+Recall that the $b$ in $Ax=b$ is the change in voltage.
+
+\subsection{Properties}
+
+Elimination can reduce every graph to a tree. Closed loops produce dependent rows.
+
+\section{Encoding and Decoding}
+
+\begin{itemize}
+	\item Put the numbers in left to right in an $n$ by $m$ matrix. For example, the message $himyname$ in a $2 \times \ldots$ matrix would equate to
+	$$
+	\begin{bmatrix}
+		h & i & m & y \\ n & a & m & e
+	\end{bmatrix}
+	$$
+\end{itemize}
+
+\section{Complex Numbers}
+
+\begin{itemize}
+	\item Please don't be dumb and remember that $a + bi$ in polar is $(\sqrt{a^2+b^2}, \tanh(a, b)$
+\end{itemize}
+
+\subsection{Hermitian Matrices}
+
+\begin{itemize}
+	\item $z^h = \bar{z}^T$
+	\item The inner product of real or complex vectors $u$ and $v$ is $u^hv$.
+	\item This applies to complex matrices as well.
+	\item An inner product of zero tells us that two vectors are perpendicular.
+	\item When factorizing such matrices into $A = Q \Lambda Q^{-1}$
+	$$Q=\begin{bmatrix}
+		\frac{x_1}{||x_1||} & 0 \\
+		0 & \frac{x_2}{||x_2||}
+	\end{bmatrix}
+	$$
+	\item Recall the property that $Q^T=Q^{-1}$
+\end{itemize}
+
+\section{Unitary Matrix Properties}
+
+\begin{itemize}
+	\item A matrix is unitary if and only if it is invertible and its inverse is equal to its conjugate transpose.
+	\item All unitary matrices have orthonormal columns.
+\end{itemize}
+
+\begin{markdown}
+
+# Singular Value Decomposition
+
+* $v$'s are eigenvectors of $A^TA$
+
+* $\sigma^2$'s are eigenvalues of $A^TA$.
+
+* The orthonormal columns of $U$ and $V$ respectively are eigenvectors of $AA^T$ and $A^TA$
+
+* $U$'s are eigenvectors of $AA^T$.
+
+* The eigenvalues of $A^TA=AA^T$ are the same (for nonzero eigenvalues).
+
+* The matrix of $A^TA$ is positive definite.
+
+\end{markdown}
+
+\begin{itemize}
+	\item Recall the shortcut $Av_i=\sigma_i u_i$. This can also be rewritten as $u_i = \frac{1}{\sigma_i}Av_{i}$
+\end{itemize}
+
+\section{Norms and Condition Numbers}
+
+\subsection{Norm Properties}
+
+\begin{itemize}
+	\item $||A||\ge 0$ for any square matrix $A$.
+	\item $||A|| = 0$ if and only if the matrix $A=0$
+	\item $||kA|| = |k| ||A||$, for any scalar $k$
+	\item $||A+B||\le ||A|| + ||B||$
+	\item In this class, we define the norm to be $$||A||=\max_{x\neq 0}\frac{||Ax||}{||x||}$$
+\end{itemize}
+
+\subsection{Norm Shortcuts}
+
+\begin{itemize}
+	\item The norm of a diagonal matrix is its largest entry by absolute value.
+	\item The norm of a positive definite matrix is its largest eigenvalue.
+	\item The norm of a symmetrix matrix is its largest eigenvalue.
+\end{itemize}
+
+\subsection{Condition numbers}
+
+Recall that $$||A^TA||=||A||^2=\max_{x\neq 0}\frac{||Ax||^2}{||x||^2}$$
+
+The square root of the largest $\lambda$ of $A^TA$ is norm of $A$.
+
+The condition number is given by $c=||A||||A^{-1}||$
+
+\end{document}

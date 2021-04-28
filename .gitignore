@@ -1,4 +1,5 @@
 /**/*.*
 /_markdown_template/
 !.gitignore
-!/**/*.{pdf,tex}
+!*.tex
+!*.pdf

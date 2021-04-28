@@ -1,0 +1,17 @@
+Key takeaways:\markdownRendererInterblockSeparator
+{}\markdownRendererUlBegin
+\markdownRendererUlItem $v$'s are eigenvectors of $A^TA$\markdownRendererUlItemEnd 
+\markdownRendererUlItem $\sigma^2$'s are eigenvalues of $A^TA$.\markdownRendererUlItemEnd 
+\markdownRendererUlItem The orthonormal columns of $U$ and $V$ respectively are eigenvectors of $AA^T$ and $A^TA$\markdownRendererUlItemEnd 
+\markdownRendererUlItem $U$'s are eigenvectors of $AA^T$\markdownRendererUlItemEnd 
+\markdownRendererUlEnd \markdownRendererInterblockSeparator
+{}A reading on Medium can be found \markdownRendererLink{here}{https://blog.statsbot.co/singular-value-decomposition-tutorial-52c695315254}{https://blog.statsbot.co/singular-value-decomposition-tutorial-52c695315254}{}. Now we will get into the SVD itself. Since the columns of $V$ are orthonormal\markdownRendererEllipsis{}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBegin
+\markdownRendererUlItem $V^T = eigenvector(A^TA)^T$\markdownRendererUlItemEnd 
+\markdownRendererUlItem $U = \begin{bmatrix}\frac{1}{\sigma\markdownRendererEmphasis{1}Av}1 & \frac{1}{\sigma_2} & \frac{N(A^T)}{|N(A^T)|}\end{bmatrix}$\markdownRendererUlItemEnd 
+\markdownRendererUlEnd \markdownRendererInterblockSeparator
+{}$$U^TU=VV^T=I$$\markdownRendererInterblockSeparator
+{}$$A = U\sum V^T$$\markdownRendererInterblockSeparator
+{}Where do we get the columns of $V$ and $U$ from?\markdownRendererInterblockSeparator
+{}$$A^T = (U\sum U^T)^T=V\sum^2 V^T$$\markdownRendererInterblockSeparator
+{}diagnolization of $A^TA$, so the $\sigma=\sqrt{\text{eigenvalues of}A^TA}$\relax

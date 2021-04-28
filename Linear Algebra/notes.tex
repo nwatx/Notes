@@ -10,7 +10,7 @@
 \renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\labelitemiii}{$\circ$}
 
-\title{Notes Template}
+\title{Linear Algebra}
 \author{Neo Wang}
 \date{\today}
 
@@ -24,13 +24,23 @@
 
 \begin{markdown}
 
+Key takeaways:
+
+* $v$'s are eigenvectors of $A^TA$
+
+* $\sigma^2$'s are eigenvalues of $A^TA$.
+
+* The orthonormal columns of $U$ and $V$ respectively are eigenvectors of $AA^T$ and $A^TA$
+
+* $U$'s are eigenvectors of $AA^T$
+
 A reading on Medium can be found [here](https://blog.statsbot.co/singular-value-decomposition-tutorial-52c695315254). Now we will get into the SVD itself. Since the columns of $V$ are orthonormal...
 
 * $V^T = eigenvector(A^TA)^T$
 
 * $U = \begin{bmatrix}\frac{1}{\sigma_1}Av_1 & \frac{1}{\sigma_2} & \frac{N(A^T)}{|N(A^T)|}\end{bmatrix}$
 
-$$VV^T=I$$
+$$U^TU=VV^T=I$$
 
 $$A = U\sum V^T$$
 
@@ -97,5 +107,51 @@ For our example, the two orthogonal eigenvectors are $(1, 1)$ and $(1, -1)$. Our
 $$
 v_1=\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right), v_2=\left(\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)
 $$
+
+Ok, the above notes are like not the best - since I have no idea if they are correct or not (as of writing, I still have no clue what SVD is). Below is the official example from an MIT video (which happens to be extremely helpful).
+
+If we are trying to find the SVD of the matrix $$C = \begin{bmatrix}5&5\\-1&7\end{bmatrix}$$
+
+We are trying to find $C = U\sum V_T$
+
+We will need a few equations. These equations are:
+
+$$C^TC = V\sum^T\sum V^T$$
+
+$$CV = U \sum$$
+
+First, we compute $$C^C = \begin{bmatrix}26&18\\18&74\end{bmatrix}$$
+
+Notice that this is just a diagnolization of $C^TC$.
+
+\subsection{4/26/2021}
+
+Ok, these notes are probably more important, since they are actually "correct". So cool thing, note that the orthonormal columns of $U$ and $V$ respectively are the eigenvectors of $AA^T$ and $A^TA$. Don't forget to normalize them. Furthermore, note that $S$ is simply all the $\sigma$s. This can include the value $0$. Finally, remember the shortcut of $Av_i=\sigma_i \vec{u_i}$
+
+Now, time to get into norms and condition numbers.
+
+Some norm properties:
+
+\begin{itemize}
+	\item $||A||\ge 0$ for any square matrix $A$.
+	\item $||A|| = 0$ if and only if the matrix $A=0$
+	\item $||kA|| = |k| ||A||$, for any scalar $k$
+	\item $||A+B||\le ||A|| + ||B||$
+	\item In this class, we define the norm to be $$||A||=\max_{x\neq 0}\frac{||Ax||}{||x||}$$
+\end{itemize}
+
+There are several important shortcuts we can take.
+
+\begin{itemize}
+	\item The norm of a diagonal matrix is its largest entry by absolute value.
+	\item The norm of a positive definite matrix is its largest eigenvalue.
+	\item The norm of a symmetrix matrix is its largest eigenvalue.
+\end{itemize}
+
+Recall that $$||A^TA||=||A||^2=\max_{x\neq 0}\frac{||Ax||^2}{||x||^2}$$
+
+The square root of the largest $\lambda$ of $A^TA$ is norm of $A$.
+
+The condition number is given by $c=||A||||A^{-1}||$
 
 \end{document}
